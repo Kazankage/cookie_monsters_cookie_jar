@@ -1,1 +1,30 @@
 <h1> New Cookie </h1>
+
+<%= form_for(@cookie) do |f|%>
+    <p> What kind of cookie you get? </p> 
+    <%= f.label :flavour %>
+    <%= f.text_field :flavour %><br>
+    <p> What cookie taste like? </p> 
+      <%= f.label :description %>
+      <%= f.text_field :description %><br>
+    
+    <br>
+    <p> What cookie's Brand? </p>
+    <div>
+     <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+
+     </div>
+
+    <p> Create new brand of cookie: </p>
+    <div>
+    <%=f.fields_for :brand do |b| %>
+      <%= b.label :name %>
+      <%= b.text_field :name %>
+    <% end %>
+  </div>
+
+  <br>
+  <br>
+
+  <%= f.submit "Om Nom Nom Nom" %>
+    <% end %>
