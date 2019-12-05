@@ -12,7 +12,11 @@
 
     
 <div align="right">
-<h5>CookieMonstersCookieJar <span id="datetime"></span></h5>
+<h5>CookieMonstersCookieJar <span id="datetime"></span><br>
+<%= link_to "Home", root_path %>
+<%= link_to "Log Out", logout_path, method: :delete %>
+<%= link_to "New Cookie", new_cooky_path %>
+</h5>
 </div>
 
 
@@ -24,11 +28,7 @@ document.getElementById("datetime").innerHTML = dt.toLocaleDateString();
 <body background="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAU4AAACXCAMAAABNy0IIAAAAA1BMVEX///+nxBvIAAAASElEQVR4nO3BMQEAAADCoPVP7W8GoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADOAMWZAAFyFUqwAAAAAElFTkSuQmCC">
 
   <body>
-  <div align="center"> 
-  <%= link_to "Home", root_path %>
-  <%= link_to "Login", login_path %>
-  <%= link_to "Signup", signup_path %>
-  <%= link_to "Log Out", logout_path, method: :delete %>
+ 
 
 </div>
 
