@@ -5,9 +5,16 @@ class CookiesController < ApplicationController
     end
 
     def create
+        @cookie = Cookie.new(cookie_params)
+        @cookie.user_id = session[:user_id]
+            if @cookie.save
+                redirect_to sushi_path(@cookie)
 
+            else
+                render :new
+            end
     end
-    
+
 
     private 
     def cookie_params
