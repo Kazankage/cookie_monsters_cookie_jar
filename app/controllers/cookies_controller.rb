@@ -30,9 +30,6 @@ class CookiesController < ApplicationController
         params.require(:cookie).permit(:flavour, :description, :brand, :brand_id, brand_attributes: [:name])
       end
       
-      def user_params
-        params.require(:user).permit(:name, :email, :username, :password)
-      end
-
+     
 end
 
