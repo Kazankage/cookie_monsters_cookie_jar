@@ -1,6 +1,6 @@
 
 <h1> New Cookie </h1>
-
+<%= render partial: 'layouts/errors', locals: {object: @cookie}  %>
 <%= form_for(@cookie) do |f|%>
     <p> What kind of cookie you get ? </p> 
     <%= f.label :flavour %>

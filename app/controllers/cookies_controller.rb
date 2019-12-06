@@ -7,7 +7,7 @@ class CookiesController < ApplicationController
     def create
         @cookie = Cookie.new(cookie_params)
         @cookie.user_id = session[:user_id]
-            if @cookie.save!
+            if @cookie.save
                 redirect_to cooky_path(@cookie)
 
             else
