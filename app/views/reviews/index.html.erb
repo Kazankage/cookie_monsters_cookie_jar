@@ -1,1 +1,7 @@
 <h3> All reviews about cookies here! </h3>
+
+<ol>
+<% @reviews.each do |review| %>
+<li><%= review.cookie.flavour %> - <%= review.rating %>
+<% end %>
+</ol>

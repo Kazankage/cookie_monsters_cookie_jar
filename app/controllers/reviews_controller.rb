@@ -8,6 +8,11 @@ class ReviewsController < ApplicationController
     end
 
     def index
+        if @cookie = Cookie.find_by_id(params[:cooky_id])
+          @reviews = @cookie.reviews
+        else
+         @reviews = Review.all
+        end
     end
 
     def create
