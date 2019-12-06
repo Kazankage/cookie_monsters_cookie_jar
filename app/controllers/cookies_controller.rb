@@ -18,6 +18,7 @@ class CookiesController < ApplicationController
 
     def index
         @cookie = Cookie.all
+        @user = User.find_by(params[:id])  
     end
 
     def show

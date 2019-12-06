@@ -1,8 +1,10 @@
-<h1> List all cookies in the Jar here. </h1>
+
+<h1><p style = "font-family:impact;font-style:bold;"> List all cookies in the Jar here. </h1>
 
 <ol>
-<%= @cookie.each do |cookies| %>
-    <li><%= cookies.flavour %></li>
-    <% end %>
-
-</ol>
+  <% @cookie.each do |cookies| %>
+   <li> <p style = "font-family:impact;font-size:20px;font-style:bold;"> 
+   <%= cookies.flavour %></li></p> <%= cookies.brand[:name] %>
+    <p style = "font-family:impact;font-size:15px;font-style:italics;"> 
+    <i> - <%= cookies.description %></i></p>
+  <% end %>

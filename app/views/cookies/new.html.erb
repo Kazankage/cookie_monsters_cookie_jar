@@ -19,9 +19,9 @@
 
     <p> Create new brand of cookie: </p>
     <div>
-    <%=f.fields_for :brand do |b| %>
-      <%= b.label :name %>
-      <%= b.text_field :name %>
+    <%=f.fields_for :brand do |brands| %>
+      <%= brands.label :name %>
+      <%= brands.text_field :name %>
     <% end %>
   </div>
 
