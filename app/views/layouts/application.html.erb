@@ -14,11 +14,18 @@
 <div align="right">
 <p style = "font-family:impact;font-size:15px;font-style:bold;">
 CookieMonstersCookieJar <span id="datetime"></span><br>
-<%= link_to "Home", root_path %>
-<%= link_to "New Cookie", new_cooky_path %>
+<%= link_to "Home", user_path(current_user)%> |
+<%= link_to "New Cookie", new_cooky_path %> |
+<%= link_to "New Review", new_review_path %> |
+<%= link_to "All Cookies", cookies_path %> |
+<%= link_to "All Reviews", reviews_path %> |
+<%= link_to "All Brands", brands_path %> |
 <%= link_to "Log Out", logout_path, method: :delete %>
 </p>
 </div>
+  
+
+<%= link_to "Home", user_path(current_user)%>
 
 
 <script>
