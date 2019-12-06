@@ -1,7 +1,16 @@
-<h1> REVIEW for <%= @review.cookie.flavour %> - <%= @review.cookie.brand.name %> </h1>
+
 
 <%= form_for(@review) do |f|%>
+   
+    <% if params[:cooky_id] %>
+    <h1> Create A Review for <%= @review.cookie.flavour %> - <%= @review.cookie.brand.name %> </h1>
+  
+    <% else %>
+    
+        <h1> Create Review </h1>
 
+  <% end %>
+  <div>
 
  <div>
  <%= f.label :rating %><br>
