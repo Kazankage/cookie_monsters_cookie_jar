@@ -6,5 +6,6 @@
    <li> <p style = "font-family:impact;font-size:20px;font-style:bold;"> 
    <%= cookies.flavour %></li></p> <%= cookies.brand[:name] %>
     <p style = "font-family:impact;font-size:15px;font-style:italics;"> 
-    <i> - <%= cookies.description %></i></p>
+    <i> - <%= cookies.description %></i></p> 
+    <%= link_to "Write a review", new_cooky_review_path(cookies.id)%>
   <% end %>
