@@ -1,4 +1,4 @@
-<h5>Current Cookie Monster: <%= @user %></h5>
+
 <h1> New Cookie </h1>
 
 <%= form_for(@cookie) do |f|%>
@@ -13,7 +13,7 @@
     <br>
     <p> What cookie's Brand? </p>
     <div>
-     <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+     <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One' %>
 
      </div>
 
