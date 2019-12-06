@@ -1,9 +1,11 @@
+<h5>Current Cookie Monster: <%= @user %></h5>
 <h1> New Cookie </h1>
 
 <%= form_for(@cookie) do |f|%>
-    <p> What kind of cookie you get? </p> 
+    <p> What kind of cookie you get ? </p> 
     <%= f.label :flavour %>
-    <%= f.text_field :flavour %><br>
+    <%= f.text_field :flavour %>
+ 
     <p> What cookie taste like? </p> 
       <%= f.label :description %>
       <%= f.text_field :description %><br>
@@ -27,4 +29,5 @@
   <br>
 
   <%= f.submit "Om Nom Nom Nom" %>
+
     <% end %>
