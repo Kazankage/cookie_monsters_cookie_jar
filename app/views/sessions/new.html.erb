@@ -1,20 +1,20 @@
   
 
-<h1> Welcome Back!! </h1>
+<h1><p style = "font-family:impact;font-style:bold;">  Welcome Back!! </h1>
 
-<p><%= flash[:error] %></p>
+<p><p style = "font-family:impact;font-style:bold;"> <%= flash[:error] %></p>
 
 <%= form_for(:user) do |f|%>
 
 
-    <%= f.label :username %>
+    <p style = "font-family:impact;font-style:bold;"> <%= f.label :username %>
     <%= f.text_field :username %><br>
   
-    <%= f.label :password %>
+    <p style = "font-family:impact;font-style:bold;"> <%= f.label :password %>
     <%= f.password_field :password %><br>
   <br>
   
   <%= f.submit "Om Nom Nom Nom" %>
 
-    <h5> Dont have an account?  <%= link_to "Signup", signup_path %> </h5>
+    <h5><p style = "font-family:impact;font-style:bold;">  Dont have an account?  <%= link_to "Signup", signup_path %> </h5>
   <% end %>

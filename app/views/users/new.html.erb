@@ -1,21 +1,21 @@
-<h1> Sign up and be a Cookie Monster Too!! </h1>
+<h1> <p style = "font-family:impact;font-style:bold;"> Sign up and be a Cookie Monster Too!! </h1>
 <%= render partial: 'layouts/errors', locals: {object: @user}  %>
 <%= form_for(@user) do |f|%>
 
-  <%= f.label :name %>
+ <p style = "font-family:impact;font-style:bold;">  <%= f.label :name %>
   <%= f.text_field :name %><br>
 
-    <%= f.label :email %>
+   <p style = "font-family:impact;font-style:bold;">  <%= f.label :email %>
     <%= f.text_field :email %><br>
 
-    <%= f.label :username %>
+   <p style = "font-family:impact;font-style:bold;">  <%= f.label :username %>
     <%= f.text_field :username %><br>
   
-    <%= f.label :password %>
+    <p style = "font-family:impact;font-style:bold;"> <%= f.label :password %>
     <%= f.password_field :password %><br>
   <br>
   
     <%= f.submit "Om Nom Nom Nom" %>
 
-<h5> Have an account already? <%= link_to "Login", login_path %> </h5>
+<h5> <p style = "font-family:impact;font-style:bold;"> Have an account already? <%= link_to "Login", login_path %> </h5>
   <% end %>
