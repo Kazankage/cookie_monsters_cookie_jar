@@ -20,6 +20,11 @@ class UsersController < ApplicationController
         redirect_to '/' if !@user
       end
 
+      def index
+        @user = User.find_by_id(params[:id])
+        redirect_to '/' if !@user
+      end
+
       private
 
   def user_params
