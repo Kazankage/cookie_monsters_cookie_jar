@@ -41,6 +41,7 @@ class SessionsController < ApplicationController
     
     if @user.save
       session[:id] = @user.id
+      
         redirect_to user_path(@user)
     else
         render :welcome
