@@ -34,7 +34,11 @@ class SessionsController < ApplicationController
     def omniauth
       @user = User.create_by_google_omniauth(auth)
       session[:user_id] = @user.id
+      session[:user_username] = @user.username
+      session[:user_email] = @user.email
+    
       redirect_to user_path(:user)
+      
     end
   
     private
