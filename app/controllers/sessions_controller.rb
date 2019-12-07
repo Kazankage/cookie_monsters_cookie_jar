@@ -28,13 +28,24 @@ class SessionsController < ApplicationController
 
 
   def omniauth
-    byebug
-    @user = User.find_or_create_by(email: auth[:info][:email]) do |pass|
+
+   # @user = User.find_or_create_by(email: auth[:info][:email]) do |pass|
+     # pass.password = SecureRandom.hex
+      
+    #end  
+    @authorization = Authorization.find_by_provider_and_uid(auth[:provider], auth[:uid])
+
+    @user = User.find_or_create_by(:username => auth[:info][:email], :email => auth[:info][:email]) do |pass|
       pass.password = SecureRandom.hex
-      pass.username = pass.email
     end
-    sessions[:id] = @user.id
-    #User.where(email: auth[:info][:email]).first_or_initialize     
+    #@user.authorizations.build :provider => auth[:provider], :uid => auth[:uid]
+    if @user.save
+      @user.id = session[:id]
+        redirect_to user_path(@user)
+    else
+        render :welcome
+    #User.where(email: auth[:info][:email]).first_or_initialize    
+    end 
   end
 
   private
