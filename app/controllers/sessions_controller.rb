@@ -38,13 +38,13 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(:username => auth[:info][:email], :email => auth[:info][:email]) do |pass|
       pass.password = SecureRandom.hex
     end
-    #@user.authorizations.build :provider => auth[:provider], :uid => auth[:uid]
+    
     if @user.save
-      @user.id = session[:id]
+      session[:id] = @user.id
         redirect_to user_path(@user)
     else
         render :welcome
-    #User.where(email: auth[:info][:email]).first_or_initialize    
+ 
     end 
   end
 

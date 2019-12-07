@@ -7,6 +7,7 @@ class CookiesController < ApplicationController
     def create
         @cookie = Cookie.new(cookie_params)
         @cookie.user_id = session[:user_id]
+        
             if @cookie.save
                 redirect_to cooky_path(@cookie)
 
@@ -21,13 +22,15 @@ class CookiesController < ApplicationController
     end
 
     def show
-        @user = User.find_by(params[:id])   
+       
+        @user = User.find_by(params[:id])  
+        @cookie = Cookie.all
      end
 
     private 
     
     def cookie_params
-        params.require(:cookie).permit(:flavour, :description, :brand_id, brand_attributes: [:name])
+        params.require(:cookie).permit(:flavour, :cookie_id, :description, :brand_id, brand_attributes: [:name])
       end
       
      
