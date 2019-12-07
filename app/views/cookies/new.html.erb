@@ -1,26 +1,26 @@
 
-<h1> New Cookie </h1>
+<h1><p style = "font-family:impact;font-style:bold;"> New Cookie </h1>
 <%= render partial: 'layouts/errors', locals: {object: @cookie}  %>
 <%= form_for(@cookie) do |f|%>
-    <p> What kind of cookie you get ? </p> 
-    <%= f.label :flavour %>
-    <%= f.text_field :flavour %>
+    <p><p style = "font-family:impact;font-style:bold;"> What kind of cookie you get ? </p> 
+    <p style = "font-family:impact;font-style:bold;"> <%= f.label :flavour %>
+    <p style = "font-family:impact;font-style:bold;"><%= f.text_field :flavour %>
  
-    <p> What cookie taste like? </p> 
-      <%= f.label :description %>
+    <p><p style = "font-family:impact;font-style:bold;"> What cookie taste like? </p> 
+    <p style = "font-family:impact;font-style:bold;"><%= f.label :description %><p>
       <%= f.text_field :description %><br>
     
     <br>
-    <p> What cookie's Brand? </p>
+    <p> <p style = "font-family:impact;font-style:bold;">What cookie's Brand? </p>
     <div>
      <%= f.collection_select :brand_id, Brand.all, :id, :name, include_blank: 'Select One' %>
 
      </div>
 
-    <p> Create new brand of cookie: </p>
+    <p><p style = "font-family:impact;font-style:bold;"> Create new brand of cookie: </p>
     <div>
     <%=f.fields_for :brand do |brands| %>
-      <%= brands.label :name %>
+      <p style = "font-family:impact;font-style:bold;"> <%= brands.label :name %><p>
       <%= brands.text_field :name %>
     <% end %>
   </div>
