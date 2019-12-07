@@ -2,9 +2,11 @@
 
 <ol>
 <% @reviews.each do |review| %>
-<li style = "font-family:impact;font-style:bold;">
-<%= review.cookie.flavour %> - <%= review.rating %>
+<h3><li style = "font-family:impact;font-style:bold;">
+ <%= review.cookie.flavour %> - <%= review.cookie.brand.name %> 
+<p>Rating: <%= review.rating %> / 5</h3>
 <p> 
-<p style = "font-family:impact;font-style:bold;"> - <%= review.content %>
+<h5><p style = "font-family:impact;font-style:bold;"> - <%= review.content %></h5>
 <% end %>
 </ol>
+

@@ -16,7 +16,7 @@ class CookiesController < ApplicationController
     end
 
     def index
-        @cookie = Cookie.all
+        @cookie = Cookie.order_by_rating
         @user = User.find_by(params[:id])  
     end
 

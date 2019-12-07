@@ -3,8 +3,8 @@
 
 <ol>
   <% @cookie.each do |cookies| %>
-   <li style = "font-family:impact; font-style:bold;" 
-   <%= cookies.flavour %> - Brand: <%= cookies.brand[:name] %></li>
+   <h3><li style = "font-family:impact;font-style:bold;">
+   <%= cookies.flavour %> - Brand: <%= cookies.brand[:name] %></li></h3>
    <i>
     <p style = "font-family:impact;font-size:15px;"> 
      Description: - <%= cookies.description %></i><br>

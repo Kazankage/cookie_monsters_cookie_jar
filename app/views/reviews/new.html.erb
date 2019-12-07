@@ -8,8 +8,12 @@
     <% else %>
     
         <h1><p style = "font-family:impact;font-style:bold;"> Create Review </h1>
-
-  <% end %>
+        <div>
+        <p style = "font-family:impact;font-style:bold;"><%= f.label :cookie, "Select Cookie" %>
+        <%= f.collection_select :cookie, Cookie.alpha, :id, :flavour_and_brand, include_blank: true %>
+      </div>
+    <% end %>
+  
   <div>
 
  <div>

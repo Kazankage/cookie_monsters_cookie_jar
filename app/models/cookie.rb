@@ -7,6 +7,11 @@ class Cookie < ApplicationRecord
 
   validates :flavour, presence: true
   validate :no_copycats
+  scope :order_by_rating, -> {left_joins(:reviews).group(:id).order('avg(rating) desc')}
+
+  def self.alpha
+    order(:flavour)
+  end
 
   def brand_attributes=(attributes)
     self.brand = Brand.find_or_create_by(attributes) if !attributes['name'].empty?
@@ -18,5 +23,9 @@ class Cookie < ApplicationRecord
     if !!cookie && cookie != self
       errors.add(:flavour, 'has already been added for that brand!')
     end
+  end
+
+  def flavour_and_brand
+    "#{flavour} - #{brand.name}"
   end
 end
