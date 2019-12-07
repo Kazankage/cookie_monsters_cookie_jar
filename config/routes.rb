@@ -6,11 +6,14 @@ Rails.application.routes.draw do
   post '/signup' => 'users#create'
   delete '/logout' => 'sessions#destroy'
   
+  get '/auth/google_oauth2/callback' => 'sessions#omniauth'
   
   resources :reviews 
   resources :cookies do
     resources :reviews, only: [:new, :index]
   end
+
+  
   resources :brands
   resources :users, only: [:show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
