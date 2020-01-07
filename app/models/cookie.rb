@@ -13,6 +13,20 @@ class Cookie < ApplicationRecord
     order(:flavour)
   end
 
+  def self.search(search)
+    if search
+      @cookie = Cookie.find_by(flavour: search)
+        if @cookie 
+          self.where(flavour: search)
+        else
+          Cookie.all
+        end
+    else
+      Cookie.all
+
+    end
+  end
+
   def brand_attributes=(attributes)
     self.brand = Brand.find_or_create_by(attributes) if !attributes['name'].empty?
     self.brand

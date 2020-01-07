@@ -17,7 +17,7 @@ class CookiesController < ApplicationController
     end
 
     def index
-        @cookie = Cookie.order_by_rating
+        @cookie = Cookie.search(params[:search])
         @user = User.find_by(params[:id])  
     end
 
@@ -30,7 +30,7 @@ class CookiesController < ApplicationController
     private 
     
     def cookie_params
-        params.require(:cookie).permit(:flavour, :cookie_id, :description, :brand_id, brand_attributes: [:name])
+        params.require(:cookie).permit(:flavour, :search, :cookie_id, :description, :brand_id, brand_attributes: [:name])
       end
       
      

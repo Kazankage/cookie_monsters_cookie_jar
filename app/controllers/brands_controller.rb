@@ -10,5 +10,5 @@ private
 
 
 def brand_params
-    params.require(:brand).permit(:name, :in_vegan)
+    params.require(:brand).permit(:name, :search, :in_vegan)
   end

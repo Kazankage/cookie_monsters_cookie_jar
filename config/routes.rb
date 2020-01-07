@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   
   get '/auth/:provider/callback' => 'sessions#omniauth'
   
+  
   resources :reviews 
   resources :cookies do
     resources :reviews, only: [:new, :index]

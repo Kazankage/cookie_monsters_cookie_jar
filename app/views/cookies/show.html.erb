@@ -3,6 +3,7 @@
 <h2><p style = "font-family:impact;font-style:bold;"> List all cookies in the Jar here. </h2>
 
 <ol>
+
   <% @cookie.each do |cookies| %>
    <h3><li style = "font-family:impact;font-style:bold;">
    <%= cookies.flavour %> - Brand: <%= cookies.brand[:name] %></li></h3>

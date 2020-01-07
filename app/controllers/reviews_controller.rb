@@ -32,7 +32,7 @@ class ReviewsController < ApplicationController
 private
 
 def review_params
-    params.require(:review).permit(:cookie_id, :content, :rating, :title)
+    params.require(:review).permit(:cookie_id, :search, :content, :rating, :title)
 end
 
 end
